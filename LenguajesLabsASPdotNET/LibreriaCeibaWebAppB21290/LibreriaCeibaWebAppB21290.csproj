@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="InsertarLibro.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -113,6 +114,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InsertarLibro.aspx.cs">
+      <DependentUpon>InsertarLibro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertarLibro.aspx.designer.cs">
+      <DependentUpon>InsertarLibro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LibrosPorPublicador.aspx.cs">
       <DependentUpon>LibrosPorPublicador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -128,6 +136,12 @@
       <DependentUpon>MostrarLibro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibreriaCeibaB21290\LibreriaCeibaB21290.csproj">
+      <Project>{12FB4286-B439-4DE0-B2CC-38CBD9E6F8F4}</Project>
+      <Name>LibreriaCeibaB21290</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

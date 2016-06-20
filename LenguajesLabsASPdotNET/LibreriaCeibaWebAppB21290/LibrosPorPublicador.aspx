@@ -8,10 +8,31 @@
     <title></title>
 </head>
 <body>
+    <center>
     <form id="form1" runat="server">
     <div>
+ 
+        <asp:Label ID="labelPublicador" runat="server" Text="Publicador: "></asp:Label>
+&nbsp;&nbsp;&nbsp;
+ 
+        <asp:DropDownList ID="ddlPublicadores" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPublicadores_SelectedIndexChanged">
+        </asp:DropDownList>
+        
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:ListBox ID="lbPublicadores" runat="server" AutoPostBack="True" OnSelectedIndexChanged="lbPublicadores_SelectedIndexChanged"></asp:ListBox>
+        <br />
+        <br />
+        <asp:GridView ID="gvLibros" runat="server" OnSelectedIndexChanged="gvLibros_SelectedIndexChanged">
+            <Columns>
+                <asp:CommandField SelectText="Ver" ShowSelectButton="True" />
+            </Columns>
+        
+        </asp:GridView>
+        
     
     </div>
     </form>
+    </center>
 </body>
 </html>
