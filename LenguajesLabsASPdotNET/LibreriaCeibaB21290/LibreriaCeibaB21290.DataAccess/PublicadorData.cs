@@ -25,7 +25,7 @@ namespace LibreriaCeibaB21290.LibreriaCeibaB21290.DataAccess
             //************----Recibe por parametro la consulta requerida a la base de datos----***************//
             SqlCommand cmdPublicador = new SqlCommand("select id_publicador,nombre_publicador,url_sitio_web "+
                                                    "from Publicador "+
-                                                   "order by nombre_publicador ", conexion);
+                                                   "order by nombre_publicador", conexion);
 
             //************----- 3: Abre la conexión con el servidor**************-----//
             conexion.Open();

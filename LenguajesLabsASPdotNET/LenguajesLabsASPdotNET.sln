@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaCeibaB21290", "Libr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaCeibaWebAppB21290", "LibreriaCeibaWebAppB21290\LibreriaCeibaWebAppB21290.csproj", "{E1452213-305C-4B6E-8421-DB4675764BF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pruebas", "Pruebas\Pruebas.csproj", "{99500813-3D54-4077-91B6-7B070E2B9ADB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E1452213-305C-4B6E-8421-DB4675764BF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1452213-305C-4B6E-8421-DB4675764BF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1452213-305C-4B6E-8421-DB4675764BF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99500813-3D54-4077-91B6-7B070E2B9ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99500813-3D54-4077-91B6-7B070E2B9ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99500813-3D54-4077-91B6-7B070E2B9ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99500813-3D54-4077-91B6-7B070E2B9ADB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
