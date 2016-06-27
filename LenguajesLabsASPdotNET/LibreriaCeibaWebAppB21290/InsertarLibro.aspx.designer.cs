@@ -67,13 +67,13 @@ namespace LibreriaCeibaWebAppB21290 {
         protected global::System.Web.UI.WebControls.TextBox TextBox5;
         
         /// <summary>
-        /// Control lbListaAutores.
+        /// Control lbAutoresDisponibles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbListaAutores;
+        protected global::System.Web.UI.WebControls.ListBox lbAutoresDisponibles;
         
         /// <summary>
         /// Control bnQuitar.
@@ -94,13 +94,13 @@ namespace LibreriaCeibaWebAppB21290 {
         protected global::System.Web.UI.WebControls.Button bnAgregar;
         
         /// <summary>
-        /// Control lbAutoresAgregados.
+        /// Control lbAutoresSeleccionados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbAutoresAgregados;
+        protected global::System.Web.UI.WebControls.ListBox lbAutoresSeleccionados;
         
         /// <summary>
         /// Control bnInsertar.

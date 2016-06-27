@@ -1,6 +1,7 @@
 ﻿using LibreriaCeibaB21290.LibreriaCeibaB21290.Common.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -53,6 +54,59 @@ namespace LibreriaCeibaB21290.LibreriaCeibaB21290.DataAccess
 
             conexion.Close();
             return libros;
+        }
+
+        public Libro InsertarLibro(Libro libro)
+        {
+            String slqProcedureInsertarLibro = "InsertarLibro";
+            SqlConnection conexion = new SqlConnection(conetionString);
+            SqlCommand cmdInsertarLibro = new SqlCommand(slqProcedureInsertarLibro, conexion);
+            cmdInsertarLibro.CommandType = System.Data.CommandType.StoredProcedure;
+            //Agregar el parametro de salida 
+            SqlParameter parCodLibro = new SqlParameter("@cod_libro", SqlDbType.Int);
+            parCodLibro.Direction = System.Data.ParameterDirection.Output;
+            cmdInsertarLibro.Parameters.Add(parCodLibro);
+            //Agregar los demas parametros restantes
+            cmdInsertarLibro.Parameters.Add(new SqlParameter("@titulo_libro", libro.TituloLibro));
+            cmdInsertarLibro.Parameters.Add(new SqlParameter("@anio_publicacion", libro.AnoPublicacion));
+            cmdInsertarLibro.Parameters.Add(new SqlParameter("@isbn", libro.Isbn));
+            cmdInsertarLibro.Parameters.Add(new SqlParameter("@precio", libro.Precio));
+            cmdInsertarLibro.Parameters.Add(new SqlParameter("@id_publicador", libro.Publicador.IdPublicador));
+            conexion.Open();
+            SqlTransaction transaction = conexion.BeginTransaction();
+
+            try
+            {
+                //Para que los objetos tipo SqlCommand funcionen debe estar abierta una conexion
+
+                cmdInsertarLibro.Transaction = transaction;
+                cmdInsertarLibro.ExecuteNonQuery();
+                libro.CodLibro = Int32.Parse(cmdInsertarLibro.Parameters["@cod_libro"].Value.ToString());
+                foreach (Autor autor in libro.ListaAutores)
+                {
+                    SqlCommand cmdInsertarLibroAutor = new SqlCommand("InsertarLibroAutor", conexion);
+                    cmdInsertarLibroAutor.Transaction = transaction;
+                    cmdInsertarLibroAutor.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmdInsertarLibroAutor.Parameters.Add(new SqlParameter("@id_autor", autor.IdAutor));
+                    cmdInsertarLibroAutor.Parameters.Add(new SqlParameter("@cod_libro", libro.CodLibro));
+                    cmdInsertarLibroAutor.ExecuteNonQuery();
+
+                }
+                transaction.Commit();
+
+            }
+            catch (SqlException exc)
+            {
+                transaction.Rollback();
+                throw exc;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return libro;
+
         }
 
     }

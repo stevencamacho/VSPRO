@@ -16,6 +16,11 @@ namespace LibreriaCeibaB21290.LibreriaCeibaB21290.Common.Domain
         private LinkedList<Autor> autores;
         private Publicador publicador;
 
+        public LinkedList<Autor> ListaAutores
+        {
+            get { return autores; }
+            set { autores = value; }
+        }
         public Libro(int codLibro, String tituloLibro)
         {
             this.codLibro = codLibro;

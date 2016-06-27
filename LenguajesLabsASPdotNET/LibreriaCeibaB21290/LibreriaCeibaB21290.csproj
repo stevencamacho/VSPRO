@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LibreriaCeibaB21290.Bussiness\AutorBussiness.cs" />
     <Compile Include="LibreriaCeibaB21290.Bussiness\LibroBussiness.cs" />
     <Compile Include="LibreriaCeibaB21290.Bussiness\PublicadorBussiness.cs" />
     <Compile Include="LibreriaCeibaB21290.Common.Domain\Autor.cs" />
