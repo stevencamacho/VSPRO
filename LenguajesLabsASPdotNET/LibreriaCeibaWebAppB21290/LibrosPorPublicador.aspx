@@ -8,7 +8,7 @@
     <title></title>
 </head>
 <body>
-    <center>
+    <div>
     <form id="form1" runat="server">
     <div>
  
@@ -33,6 +33,6 @@
     
     </div>
     </form>
-    </center>
+    </div>
 </body>
 </html>

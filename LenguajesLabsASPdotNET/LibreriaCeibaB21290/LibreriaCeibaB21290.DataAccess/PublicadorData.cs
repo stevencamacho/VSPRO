@@ -18,6 +18,7 @@ namespace LibreriaCeibaB21290.LibreriaCeibaB21290.DataAccess
         
         public LinkedList<Publicador> GetPublicadores()
         {
+            
             //************----- 1:Creación variable de tipo SqlConnection-----***********//
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
